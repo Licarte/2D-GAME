@@ -2,8 +2,6 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/Survival/Library
-/Library/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -62,7 +60,6 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
-*.fbx
 
 # Crashlytics generated file
 crashlytics-build.properties
