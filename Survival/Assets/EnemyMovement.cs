@@ -18,17 +18,16 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-
         var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, newTarget.position, step);
+        Vector3 targetPosition = new Vector3(newTarget.position.x, transform.position.y, newTarget.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
 
-        Vector3 targetDirection = newTarget.position - transform.position;
+        Vector3 targetDirection = new Vector3(newTarget.position.x, transform.position.y, newTarget.position.z) - transform.position;
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, step, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);
 
-
         float distance = Vector3.Distance(player.position, transform.position);
-        if(distance < 0.5f)
+        if (distance < 0.5f)
         {
             Destroy(gameObject);
         }
